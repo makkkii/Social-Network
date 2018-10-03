@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <nav class="navbar navbar-light" style="background-color: #034f84;">
+      <a class="navbar-brand" href="#" style="color: #d5f4e6;">
+        <!--<img src="#/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">-->
+        Bootstrap
+      </a>
+    </nav>
+    <div class="container -right" id="signup">
+          <form method="POST">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-3">
+          {{ form.first_name|as_crispy_field }}
+        </div>
+        <div class="col-3">
+          {{ form.last_name|as_crispy_field }}
+        </div>
+       </div>
+      <div class="row">
+        <div class="col-6">
+          {{ form.email|as_crispy_field }}
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-6">
+          {{ form.username|as_crispy_field}}
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-6">
+          {{ form.password1|as_crispy_field }}
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-6">
+          {{ form.password2|as_crispy_field }}
+        </div>
+        </div>
+
+        <button class="btn btn-success btn-block col-6" type="submit">Sign up</button>
+        <small class="form-text text-muted">Or authenticate with these</small>
+            <a href="#" class="btn btn-primary">Facebook</a>
+            <a href="#" class="btn btn-danger">Google+</a>
+            <a href="#" class="btn btn-secondary">Twitter</a>
+
+    </form>
+    <br>
+    <br>
+    <br>
+    </div>
+{% endblock %}
