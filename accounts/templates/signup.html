@@ -11,8 +11,8 @@
       </a>
     </nav>
     <div class="container -right" id="signup">
-          <form method="POST">
-      {% csrf_token %}
+      <form method="POST" novalidate>
+        {% csrf_token %}
       <div class="row">
         <div class="col-3">
           {{ form.first_name|as_crispy_field }}
@@ -42,12 +42,12 @@
         </div>
         </div>
 
+
         <button class="btn btn-success btn-block col-6" type="submit">Sign up</button>
         <small class="form-text text-muted">Or authenticate with these</small>
             <a href="#" class="btn btn-primary">Facebook</a>
             <a href="#" class="btn btn-danger">Google+</a>
             <a href="#" class="btn btn-secondary">Twitter</a>
-
     </form>
     <br>
     <br>

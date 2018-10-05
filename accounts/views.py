@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import SignUpForm
 from django.contrib.auth import login as auth_login
+from django.views.generic import TemplateView, UpdateView, CreateView
 
-
-def home(requset):
-    return render(requset, 'home.html')
+class IndexView(TemplateView):
+    template_name = 'home.html'
 
 
 def signup(request):

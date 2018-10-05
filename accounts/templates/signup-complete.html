@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2>Welcome {{ user.first_name }}</h2>
+<br>
+<a href="#" class="btn btn-primary">Add people to your profile</a>
+{% endblock %}
